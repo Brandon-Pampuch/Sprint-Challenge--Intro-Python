@@ -36,7 +36,7 @@ def cityreader(cities=[]):
     with open('cities.csv') as reader:
 
         for row in reader:
-            my_list = row.split(',')
+            my_list = row.split(",")
             if(row[0] == 'c'):
                 continue
             cities.append(City(my_list[0], float(
