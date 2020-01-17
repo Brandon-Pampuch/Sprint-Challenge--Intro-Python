@@ -19,31 +19,28 @@
 import csv
 
 
-cities = []
-
-
 class City:
     def __init__(self, name, lat, lon):
-        self.name = name,
-        self.lat = lat,
+        self.name = name
+        self.lat = lat
         self.lon = lon
 
     def __str__(self):
         return (f"{self.name}, {self.lat}, {self.lon}")
 
 
+cities = []
+
+
 def cityreader(cities=[]):
-    f = open('cities.csv', 'r')
-    reader = csv.reader(f)
-    myList = list(reader)
-    # TODO Implement the functionality to read from the 'cities.csv' file
-    # For each city record, create a new City instance and add it to the
-    # `cities` list
-    for row in myList:
-        if row[0] == 'city'
-        continue
-        new_city = City(row[0], row[3], row[4])
-        cities.append(new_city)
+    with open('cities.csv') as reader:
+
+        for row in reader:
+            my_list = row.split(',')
+            if(row[0] == 'c'):
+                continue
+            cities.append(City(my_list[0], float(
+                my_list[3]), float(my_list[4])))
     return cities
 
 
